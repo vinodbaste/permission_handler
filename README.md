@@ -44,7 +44,7 @@ Example:
 ```
 
 ## Single permission
-Pass the single permission you want to request.
+Pass the permission you want to request.
 ```java
 PermissionsHandler.requestPermission(this, Manifest.permission.CALL_PHONE, null, new PermissionHandler() {
 @Override
@@ -68,7 +68,7 @@ public void onPermissionGranted() {
 
 ## override methods
 **onPermissionGranted:**
-Handle your logic on permission granted
+This override method is called after all the permissions are granted by the user.
 ```java
 public void onPermissionGranted(){
         Toast.makeText(MainActivity.this,"Permissions granted.",Toast.LENGTH_SHORT).show();
@@ -76,7 +76,7 @@ public void onPermissionGranted(){
 ```
 
 **onPermissionDenied:**
-Handle your logic on permission denied
+This override method is called when any of the permission is denied by the user.
 ```java
  @Override
 public void onPermissionDenied(Context context, ArrayList<String> deniedPermissions) {
@@ -85,7 +85,7 @@ public void onPermissionDenied(Context context, ArrayList<String> deniedPermissi
 ```
 
 **onPermissionDeniedOnce:**
-Handle your logic on permission denied once
+This override method is called when any of the permission is denied by the user once or on the first time of the permisssion promt window is displayed.
 ```java
 @Override
 public void onPermissionDeniedOnce(Context context, ArrayList<String> justBlockedList, ArrayList<String> deniedPermissions) {
@@ -97,16 +97,23 @@ public void onPermissionDeniedOnce(Context context, ArrayList<String> justBlocke
 ```
 
 **onPermissionNeverAskAgain:**
-Handle your logic on permission never ask again
+This override method is called when any of the permission is denied perminentaly by the user.
 ```java
  @Override
 public boolean onPermissionNeverAskAgain(Context context, ArrayList<String> blockedList) {
         return super.onPermissionNeverAskAgain(context, blockedList);
         }
 ```
+# Note
+```
+On perment deny of any permission requested, navigating to application settings to enable the denied permission promt is enabled by default.
+```
 
 ## Customized permissions request
-you can customize the permission request by customising the options.
+you can customize the permission request by using `options`.
+* **rationale:** short message for why the permission is needed.
+* **setRationaleDialogTitle:** title for rational dialog.
+* **setSettingsDialogTitle:** title for settings dialog.
 ```java
 String[] permissions = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
         String rationale = "Please provide location permission so that you can ...";
@@ -125,6 +132,7 @@ public void onPermissionDenied(Context context, ArrayList<String> deniedPermissi
         Toast.makeText(MainActivity.this, "Location denied.", Toast.LENGTH_SHORT).show();
         }
         });
+	
 ```
 
 **If you find this library useful, please consider starring this repository from the top of this page.**
