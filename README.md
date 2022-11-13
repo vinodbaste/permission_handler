@@ -11,6 +11,7 @@ and you can show a rationale for requesting a permission.
 [![Story - Medium](https://img.shields.io/badge/Story-Medium-2ea44f)](https://medium.com/codex/image-compressor-13dbfd0445a3)
 [![GitHub - VinodBaste](https://img.shields.io/badge/GitHub-VinodBaste-4664c6)](https://github.com/vinodbaste/permission_handler)
 
+<img src = "https://github.com/vinodbaste/app_update/raw/main/screenshots/android.png" width = 250 height = 500 />
 
 # How to implement
 To get a Git project into your build:
