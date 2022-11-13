@@ -106,7 +106,7 @@ public boolean onPermissionNeverAskAgain(Context context, ArrayList<String> bloc
 ```
 # Note
 ```
-On perment deny of any permission requested, navigating to application settings to enable the denied permission promt is enabled by default.
+On permanent deny of any permission requested, navigating to application settings to enable the permanent denied permission promt is enabled by default.
 ```
 
 ## Customized permissions request
