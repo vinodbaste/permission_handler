@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">permission_handler</string>
+    <string name="request_camera_and_storage">Request Camera And Storage!</string>
+    <string name="request_location">request location</string>
+</resources>
