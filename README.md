@@ -11,6 +11,27 @@ and you can show a rationale for requesting a permission.
 [![Story - Medium](https://img.shields.io/badge/Story-Medium-2ea44f)](https://medium.com/codex/image-compressor-13dbfd0445a3)
 [![GitHub - VinodBaste](https://img.shields.io/badge/GitHub-VinodBaste-4664c6)](https://github.com/vinodbaste/permission_handler)
 
+
+# How to implement
+To get a Git project into your build:
+## Gradle
+` Step 1:` Add it in your **root build.gradle**  at the end of repositories:
+```java
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+
+`Step 2:` Add the dependency in your **project build.gradle**
+```java
+dependencies {
+    implementation 'com.github.vinodbaste:permission_handler:1.0.0'
+}
+```
+
 # Usage:
 ------
 
@@ -83,7 +104,7 @@ public boolean onPermissionNeverAskAgain(Context context, ArrayList<String> bloc
         }
 ```
 
-**Customized permissions request:**
+## Customized permissions request
 you can customize the permission request by customising the options.
 ```java
 String[] permissions = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
